@@ -1,0 +1,31 @@
+package com.example.demo.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.example.demo.model.LoginDto;
+import com.example.demo.services.UserService;
+
+@Controller
+@RequestMapping("np")
+public class LoginController {
+
+	
+	public UserService userService;
+	
+	
+	public String login(@ModelAttribute("register") LoginDto login, ModelMap model)
+	
+	{
+		model.addAttribute("email", login.getEmail());
+		model.addAttribute("password", login.getPassword());
+		
+		System.out.println(login.getEmail()+"----"+login.getPassword());
+		
+		return null;
+		
+	}
+	
+}

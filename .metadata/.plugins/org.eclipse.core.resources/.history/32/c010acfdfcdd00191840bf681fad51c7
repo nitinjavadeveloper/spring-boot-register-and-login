@@ -1,0 +1,36 @@
+package com.example.demo.repository;
+
+import java.util.List;
+
+import org.springframework.stereotype.Repository;
+
+import com.example.demo.model.Employee;
+
+@Repository
+public class UserRepoImpl implements UserRepo {
+
+	@Override
+	public List<Employee> getCustomers() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void saveCustomer(Employee theCustomer) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public Employee getCustomer(int theId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void deleteCustomer(int theId) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

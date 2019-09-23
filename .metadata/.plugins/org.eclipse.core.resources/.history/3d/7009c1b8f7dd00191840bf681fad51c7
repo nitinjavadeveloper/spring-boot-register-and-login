@@ -1,0 +1,31 @@
+package com.example.demo.model;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="np_user")
+public class Employee {
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private int recordId;
+	
+	@Column(name="user_name")
+	private String userName;
+	
+	@Column(name="Email")
+	private String email;
+	
+	@Column(name="password")
+	private String password;
+	
+	@Column(name="designation")
+	private String designation;
+	
+	
+}

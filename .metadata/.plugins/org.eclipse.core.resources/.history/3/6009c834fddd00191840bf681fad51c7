@@ -1,0 +1,54 @@
+package com.example.demo.repository;
+
+import java.util.List;
+
+import javax.persistence.criteria.CriteriaBuilder;
+
+import javax.persistence.Query;
+import javax.persistence.criteria.CriteriaBuilder;
+import javax.persistence.criteria.CriteriaQuery;
+import javax.persistence.criteria.Root;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+
+import com.example.demo.model.Employee;
+
+@Repository
+public class UserRepoImpl implements UserRepo {
+
+	@Autowired
+    private SessionFactory sessionFactory;
+	
+	@Override
+	public List<Employee> getCustomers() {
+		 Session session = sessionFactory.getCurrentSession();
+	        CriteriaBuilder cb = session.getCriteriaBuilder();
+	        CriteriaQuery < Employee > cq = cb.createQuery(Employee.class);
+	        Root < Employee > root = cq.from(Employee.class);
+	        cq.select(root);
+	        Query query = session.createQuery(cq);
+	        return query.getResultList();
+	}
+
+	@Override
+	public void saveCustomer(Employee theCustomer) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public Employee getCustomer(int theId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void deleteCustomer(int theId) {
+		// TODO Auto-generated method stub
+
+	}
+
+}
